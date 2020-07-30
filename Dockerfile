@@ -10,6 +10,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/reposi
     apk add --update apache2 openvpn iptables bash easy-rsa openvpn-auth-pam openvpn-ldap-auth google-authenticator pamtester && \
     ln -s /usr/share/easy-rsa/easyrsa /usr/local/bin && \
     mkdir -p /run/apache2 && \
+    sed "s#/var/www/localhost/htdocs#/etc/openvpn/clients#" /etc/apache2/httpd.conf -i && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
 
 # Needed by scripts
