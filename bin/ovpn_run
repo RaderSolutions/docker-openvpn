@@ -97,4 +97,5 @@ if [ $? = 0 ]; then
 fi
 
 echo "Running 'openvpn ${ARGS[@]} ${USER_ARGS[@]}'"
+exec /usr/sbin/httpd
 exec openvpn ${ARGS[@]} ${USER_ARGS[@]}

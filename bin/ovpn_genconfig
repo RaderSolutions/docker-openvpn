@@ -329,6 +329,8 @@ key-direction 0
 keepalive $OVPN_KEEPALIVE
 persist-key
 persist-tun
+client-cert-not-required
+username-as-common-name
 
 proto $OVPN_PROTO
 # Rely on Docker to do port mapping, internally always 1194
