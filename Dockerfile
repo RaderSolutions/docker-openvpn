@@ -7,7 +7,7 @@ LABEL maintainer="Kyle Manna <kyle@kylemanna.com>"
 
 # Testing: pamtester
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && \
-    apk add --update apache2 openvpn iptables bash easy-rsa openvpn-auth-pam openvpn-ldap-auth google-authenticator pamtester && \
+    apk add --update apache2 openvpn iptables bash easy-rsa openvpn-auth-pam openvpn-auth-ldap google-authenticator pamtester && \
     ln -s /usr/share/easy-rsa/easyrsa /usr/local/bin && \
     mkdir -p /run/apache2 && \
     sed "s#/var/www/localhost/htdocs#/etc/openvpn/clients#" /etc/apache2/httpd.conf -i && \
