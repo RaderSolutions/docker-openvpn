@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Run once, hold otherwise
+if [ -f "already_ran" ]; then
+    echo "Already ran the Entrypoint once. Holding indefinitely for debugging."
+    cat
+fi
+touch already_ran
+
 #
 # Run the OpenVPN server normally
 #
@@ -98,6 +105,7 @@ fi
 
 mkdir -p /run/apache2
 rm -f /run/apache2/httpd.pid
+sed "s#/var/www/localhost/htdocs#/etc/openvpn/clients#" /etc/apache2/httpd.conf -i 
 /usr/sbin/httpd
 
 echo "Running 'openvpn ${ARGS[@]} ${USER_ARGS[@]}'"
