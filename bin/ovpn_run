@@ -105,7 +105,7 @@ fi
 
 mkdir -p /run/apache2
 rm -f /run/apache2/httpd.pid
-sed "s#/var/www/localhost/htdocs#/etc/openvpn/clients#" /etc/apache2/httpd.conf -i 
+sed "s#/.*/htdocs#/etc/openvpn/clients#g" /etc/apache2/httpd.conf -i 
 /usr/sbin/httpd
 
 echo "Running 'openvpn ${ARGS[@]} ${USER_ARGS[@]}'"
