@@ -206,7 +206,6 @@ while getopts ":a:e:E:C:T:r:s:du:bcp:n:k:DNm:f:tz2" opt; do
             ;;
         d)
             OVPN_DEFROUTE=0
-            OVPN_DISABLE_PUSH_BLOCK_DNS=1
             ;;
         u)
             OVPN_SERVER_URL="$OPTARG"
