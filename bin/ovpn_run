@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Run once, hold otherwise
-if [ -f "already_ran" ]; then
+if [ -f "/etc/openvpn/already_ran" ]; then
     echo "Already ran the Entrypoint once. Holding indefinitely for debugging."
     exec sleep 300
 fi
-touch already_ran
+
 
 #
 # Run the OpenVPN server normally
